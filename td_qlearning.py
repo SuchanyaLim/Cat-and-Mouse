@@ -80,8 +80,7 @@ class td_qlearning:
       values = []
       for action in all_actions:
           values.append(self.qvalue(state, action))
-      
-      print(all_actions[numpy.argmax(values)])
+
       return all_actions[numpy.argmax(values)]
 
     def reward(self, state):

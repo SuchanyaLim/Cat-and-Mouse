@@ -62,8 +62,7 @@ class simulation:
             print(self)
             return
         state = (self.mouse_loc, cat_loc)
-        print(state)
-        mouse_mov = self.trial.policy(("AD",7))
+        mouse_mov = self.trial.policy(self.state_to_char(state))
         new_mouse_loc = self.policy_interpreter(mouse_mov)
 
         new_state = (new_mouse_loc, cat_loc)
@@ -110,5 +109,4 @@ class simulation:
             if i == cloc:
                 cloc = state_dict[i]
 
-        print(mloc+cloc, 7)
-        return (mloc+cloc, 7)
+        return mloc+cloc
